@@ -21,7 +21,7 @@ url: "https://ld4p.github.io" # the base hostname & protocol for your site, e.g.
 
 # Build settings
 markdown: kramdown
-theme: minimal-architect
+remote_theme: minimal-architect
 plugins:
   - jekyll-feed
   - jekyll-menus
