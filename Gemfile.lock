@@ -33,6 +33,11 @@ GEM
       jekyll (~> 3.1)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
+    jekyll-seo-tag (2.5.0)
+      jekyll (~> 3.3)
+    jekyll-theme-minimal (0.1.1)
+      jekyll (~> 3.5)
+      jekyll-seo-tag (~> 2.0)
     jekyll-watch (2.0.0)
       listen (~> 3.0)
     kramdown (1.17.0)
@@ -42,8 +47,6 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
     mercenary (0.3.6)
-    minimal-architect (0.1.0)
-      jekyll (~> 3.7.3)
     pathutil (0.16.1)
       forwardable-extended (~> 2.6)
     public_suffix (3.0.3)
@@ -66,7 +69,7 @@ DEPENDENCIES
   jekyll (~> 3.7.3)
   jekyll-feed (~> 0.6)
   jekyll-menus
-  minimal-architect
+  jekyll-theme-minimal
   tzinfo-data
 
 BUNDLED WITH

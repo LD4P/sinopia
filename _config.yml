@@ -21,13 +21,13 @@ url: "https://ld4p.github.io" # the base hostname & protocol for your site, e.g.
 
 # Build settings
 markdown: kramdown
-remote_theme: minimal-architect
+theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
   - jekyll-menus
 
 logo: assets/img/logo.jpeg
-show_downloads: true
+show_downloads: false
 
 site:
   - github:
