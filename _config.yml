@@ -21,27 +21,33 @@ url: "https://ld4p.github.io" # the base hostname & protocol for your site, e.g.
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-minimal
+remote_theme: cmh2166/minimal-architect
 plugins:
   - jekyll-feed
-  - jekyll-menus
+  - jekyll-remote-theme
 
 logo: assets/img/logo.jpeg
-show_downloads: false
+show_downloads: true
+project_wiki: https://wiki.duraspace.org/pages/viewpage.action?pageId=101783799
+project_issues: https://waffle.io/LD4P/sinopia
 
 site:
   - github:
     - owner_url: https://github.com/ld4p
     - owner_label: LD4P
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+menu:
+  - menu-label: User Requirements & Constraints
+    menu-url: /sinopia/requirements
+  - menu-label: Minimum Viable Product
+    menu-url: /sinopia/mvp
+  - menu-label: External Data Interactions
+    menu-url: /sinopia/external-data
+  - menu-label: Acceptance Tests
+    menu-url: /sinopia/acceptance-tests
+  - menu-label: Architecture
+    menu-url: /sinopia/architecture
+  - menu-label: Implementation
+    menu-url: /sinopia/implementation
+  - menu-label: Data & Interaction Models
+    menu-url: /sinopia/models
