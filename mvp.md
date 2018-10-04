@@ -24,6 +24,4 @@ Work in progress.
 * Complex semantic validation
 
 ## Uncertain
-* SPARQL query endpoint
-* SPARQL period
-* Share VDE connections
+* SPARQL support or usage
