@@ -37,8 +37,10 @@ site:
     - owner_label: LD4P
 
 menu:
-  - menu-label: User Requirements & Constraints
+  - menu-label: Requirements & Constraints
     menu-url: /sinopia/requirements
+  - menu-label: Glossary
+    menu-url: /sinopia/glossary
   - menu-label: Minimum Viable Product
     menu-url: /sinopia/mvp
   - menu-label: External Data Interactions
