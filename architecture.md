@@ -11,14 +11,13 @@ All of the following diagrams should be accessible in [this open Google drive fo
 This is a high-level diagram of the full Sinopia system and it's components. Where feasible at a high level, sub-system interactions and protocols are documented here:
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vQj9BkBgdCu70D8wCyFigqIuy6Uw9vjN2C3K3tPsLpSPB8_4Hz-Cm9bqdEPR6r4xHiIiY4TFkPjiurq/pub?w=1256&h=720)
-
 <small>[link to diagram](https://docs.google.com/drawings/d/1FdgAeWT2xAaXBWLw2MWHK1tIEC1q_ls56VX3gPiZUcM/edit)</small>
 
 # Architectural Components
 
 ### Sinopia Profile Editor
 
-![](assets/img/SinopiaProfileEditor.png)
+![](https://docs.google.com/drawings/d/e/2PACX-1vSHdVxkwgq4ImystEwHxPwDgpW8tFVdgEkoglEZtwWQwKt3Ah4Kc0w-J-VQdeRgdhpzKTBPX_trMcm9/pub?w=1441&h=854)
 <small>[link to diagram, requires Draw.io Google Drive Add-on to Edit](https://drive.google.com/file/d/19MjuEht4oKJC3ICoKHDJAut8vog7EL7w/view?usp=sharing)</small>
 
 ### Sinopia Front-End
@@ -28,7 +27,7 @@ This is a high-level diagram of the full Sinopia system and it's components. Whe
 
 ### Sinopia Server & Data Materialization
 
-![](assets/img/SinopiaServer.png)
+![](https://docs.google.com/drawings/d/e/2PACX-1vTvA-mXmVizhINLd34bhFDIyKzYC39HkR6vFG-Z2fUr-P196Mf-juH2CqOUq0A4twkhT_-umyi7xJaq/pub?w=1269&h=1080)
 <small>[link to diagram, requires Draw.io Google Drive Add-on to Edit](https://drive.google.com/file/d/1hqLoObnmQ-HEtgJSqfN0SoKZH9OmO3xb/view?usp=sharing)</small>
 
 ### Integration Points & Interfaces (External ReST APIs or other)
@@ -39,7 +38,7 @@ WIP. See [the work here](/sinopia/external-data) that is specifically about Sino
 
 These are a list of "dataflow" and sequence diagrams to help unravel the expected and supported Sinopia system interactions. These are a level or two below some of the UX/UI work, focusing on the underlying systems.
 
-### Overall 'Dataflow' Diagrams
+### Overall 'Dataflow' Diagram
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTQL_vTX8eLbk9xdLOqvFjkNjQM_L8tmDpGrHNFfeeN9KK66m64kV34BHMu9DNoUBwllaGKLDACV_vH/pub?w=4797&h=1804)
 <small>[link to diagram](https://docs.google.com/drawings/d/1FoMgCn6FqAHN0W_lpkZOZF4G5ezkSxf6iWrBgg1SLQw/edit)</small>
@@ -72,9 +71,12 @@ Option 2: Search & Select Profile
 
 ### Edit Existing Profile
 
+WIP.
+
 
 ### Delete Existing Profile
 
+WIP.
 
 ### Create New Entity
 
@@ -83,15 +85,19 @@ Option 2: Search & Select Profile
 
 ### Create New Entity with Context
 
+WIP.
 
 ### Edit Existing Entity
 
+WIP.
 
 ### Delete Existing Entity
 
+WIP.
 
 ### Sinopia / QA Form Type-Ahead
 
+WIP.
 
 ### Sinopia / QA Form Contextual Lookup
 
@@ -100,17 +106,23 @@ Option 2: Search & Select Profile
 
 ### Sinopia / QA External Keyword Search
 
+WIP.
 
 ### Sinopia / Internal Form Type-Ahead
 
+WIP.
 
 ### Sinopia / Internal Form Contextual Lookup
 
+WIP.
 
 ### Sinopia / Internal Keyword Search
 
+WIP.
 
 ### Sinopia / Internal Faceted Search
+
+WIP.
 
 # Original Whiteboard Photos
 
