@@ -53,3 +53,5 @@ menu:
     menu-url: /sinopia/implementation
   - menu-label: Data & Interaction Models
     menu-url: /sinopia/models
+  - menu-label: JSON schemas for Profiles and ResourceTemplates
+    menu-url: /sinopia/schemas
