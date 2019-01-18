@@ -18,7 +18,7 @@
     },
     "propertyLabel": {
       "type": "string",
-      "title": "Resource Label",
+      "title": "Property Label",
       "description": "Preferred, human readable label associated with the property.",
       "example": [
         "BIBFRAME 2.0 Admin Metadata"
@@ -27,7 +27,7 @@
     "propertyURI": {
       "type": "string",
       "format": "uri",
-      "title": "Resource URI",
+      "title": "Property URI",
       "description": "URI of the RDF property being described.",
       "example": [
         "http://id.loc.gov/ontologies/bibframe/AdminMetadata"
