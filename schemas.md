@@ -59,28 +59,28 @@ Changes from version 0.0.1:
 
 The schemas are:
 
-- https://ld4p.github.io/sinopia/schemas/0.1.0/profile.json
-- https://ld4p.github.io/sinopia/schemas/0.1.0/resource-templates-array.json
-- https://ld4p.github.io/sinopia/schemas/0.1.0/resource-template.json
-- https://ld4p.github.io/sinopia/schemas/0.1.0/property-templates-array.json
-- https://ld4p.github.io/sinopia/schemas/0.1.0/property-template.json
+- <https://ld4p.github.io/sinopia/schemas/0.1.0/profile.json>
+- <https://ld4p.github.io/sinopia/schemas/0.1.0/resource-templates-array.json>
+- <https://ld4p.github.io/sinopia/schemas/0.1.0/resource-template.json>
+- <https://ld4p.github.io/sinopia/schemas/0.1.0/property-templates-array.json>
+- <https://ld4p.github.io/sinopia/schemas/0.1.0/property-template.json>
 
 special bonus schema
-- https://ld4p.github.io/sinopia/schemas/0.1.0/profiles-array.json
+- <https://ld4p.github.io/sinopia/schemas/0.1.0/profiles-array.json>
 
 
 ## Version 0.0.1
 
-Version 0.0.1 JSON Schemas cleanly validate the LC profiles from https://github.com/lcnetdev/verso with a minimum of changes to those profiles. (See https://github.com/LD4P/sinopia_sample_profiles/pull/14 for the changes required)
+Version 0.0.1 JSON Schemas cleanly validate the LC profiles from <https://github.com/lcnetdev/verso> with a minimum of changes to those profiles. (See <https://github.com/LD4P/sinopia_sample_profiles/pull/14> for the changes required)
 
-- https://ld4p.github.io/sinopia/schemas/0.0.1/profile.json
-- https://ld4p.github.io/sinopia/schemas/0.0.1/resource-templates-array.json
-- https://ld4p.github.io/sinopia/schemas/0.0.1/resource-template.json
-- https://ld4p.github.io/sinopia/schemas/0.0.1/property-templates-array.json
-- https://ld4p.github.io/sinopia/schemas/0.0.1/property-template.json
+- https://ld4p.github.io/sinopia/schemas/0.0.1/profile.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.1/resource-templates-array.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.1/resource-template.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.1/property-templates-array.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.1/property-template.json>
 
 special bonus schema
-- https://ld4p.github.io/sinopia/schemas/0.0.1/profiles-array.json
+- <https://ld4p.github.io/sinopia/schemas/0.0.1/profiles-array.json>
 
 
 ## Example ajv validation commands
