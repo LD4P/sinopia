@@ -8,7 +8,6 @@
   "required": [
     "propertyURI",
     "propertyLabel",
-    "schema",
     "type"
   ],
   "properties": {
@@ -57,15 +56,6 @@
       "title": "Always empty array of Resource Template References",
       "description": "This is not currently used, but should/could replace valueConstraint.valueTemplateRefs",
       "maxItems": 0
-    },
-    "schema": {
-      "type": "string",
-      "format": "uri",
-      "title": "URL for Property Template's JSON schema",
-      "description": "The property template adheres to the JSON schema at this URL",
-      "example": [
-        "https://ld4p.github.io/sinopia/schemas/0.1.0/property-template.json"
-      ]
     },
     "type": {
       "type": "string",
