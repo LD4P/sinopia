@@ -8,7 +8,6 @@
   "required": [
     "author",
     "date",
-    "description",
     "id",
     "propertyTemplates",
     "resourceURI",
