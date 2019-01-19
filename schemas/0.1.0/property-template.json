@@ -16,7 +16,7 @@
       "type": ["boolean","string"],
       "enum": ["true", "false"],
       "title": "Mandatory",
-      "description": "Indication that a value for the property is required.  If unspecified, defaults to false."
+      "description": "Indication that a value for the property is required. If unspecified, defaults to false."
     },
     "propertyLabel": {
       "type": "string",
@@ -48,7 +48,7 @@
       "type": ["boolean","string"],
       "enum": ["true", "false"],
       "title": "Repeatable",
-      "description": "Indication that the property is repeatable."
+      "description": "Indication that the property is repeatable. If unspecified, defaults to true."
     },
     "resourceTemplates": {
       "type": "array",
