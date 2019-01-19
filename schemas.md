@@ -44,7 +44,6 @@ Changes from version 0.0.1:
     - add source attribute
 
 - Property Template:
-    - add required schema attributes
     - type attribute can only be 'literal', 'resource', or 'lookup'
     - mandatory and repeatable properties can be proper booleans OR strings (e.g. true or 'true')
     - valueConstraint.editable attribute removed as it will always be true
