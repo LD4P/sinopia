@@ -75,13 +75,9 @@
           "$ref": "https://ld4p.github.io/sinopia/schemas/0.1.0/resource-templates-array.json"
         },
         "schema": {
-          "type": "string",
-          "format": "uri",
+          "const": "https://ld4p.github.io/sinopia/schemas/0.1.0/profile.json",
           "title": "URL for Profile's JSON schema",
-          "description": "The profile adheres to the JSON schema at this URL",
-          "example": [
-            "https://ld4p.github.io/sinopia/schemas/0.1.0/resource-template.json"
-          ]
+          "description": "The profile adheres to the JSON schema at this URL"
         },
         "source": {
           "type": "string",

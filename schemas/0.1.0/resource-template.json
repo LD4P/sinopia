@@ -87,13 +87,9 @@
       ]
     },
     "schema": {
-      "type": "string",
-      "format": "uri",
+      "const": "https://ld4p.github.io/sinopia/schemas/0.1.0/resource-template.json",
       "title": "URL for Resource Template's JSON schema",
-      "description": "The resource template adheres to the JSON schema at this URL",
-      "example": [
-        "https://ld4p.github.io/sinopia/schemas/0.1.0/resource-template.json"
-      ]
+      "description": "The resource template adheres to the JSON schema at this URL"
     },
     "source": {
       "type": "string",
