@@ -8,6 +8,9 @@ layout: default
 
 Desired updates:
 
+Resource Template:
+- is there a real difference between description and resourceLabel?  If not, can we remove one?
+
 Property Template:
 - conditional JSON schemas that only allow appropriate valueConstraints given the type:
     - lookup:  
