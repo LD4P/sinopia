@@ -4,9 +4,70 @@ layout: default
 
 # Sinopia JSON Schemas for Resource Templates / Profiles
 
-## Version (next)
+## Version (future)
 
-Version (next) blah blah.
+Desired updates:
+
+Property Template:
+- conditional JSON schemas that only allow appropriate valueConstraints given the type:
+    - lookup:  
+       - require useValuesFrom and disallow valueTemplateRefs
+       - require dataTypeURI when there is a default specified
+    - resource:
+       - require valueTemplateRefs/resourceTemplates and disallow useValuesFrom and possibly defaults
+    - literal:
+       - disallow valueTemplateRefs/resourceTemplates as well as useValuesFrom
+- use resourceTemplates at outer level instead of valueConstraint.valueTemplateRefs (or move valueTemplateRefs out a level and get rid of )
+- move useValuesFrom out a level, instead of valueConstraints.useValuesFrom
+- move defaults out a level, instead of valueConstraints.defaults
+- move dataTypeURI out two levels, instead of valueConstraints.valueDataType.dataTypeURI or maybe include it within default, since it is only used for type lookup with a default.
+- only accept boolean (not string) for true/false.  (e.g. true not "true")
+
+## Version 0.1.0
+
+Version 0.1.0 JSON Schemas are streamlined for Sinopia work.  
+
+Changes from version 0.0.1:
+
+- Profile:
+    - require author attribute
+    - add required schema attributes
+    - add adherence attribute
+    - add source attribute
+
+- Resource Template:
+    - add required author attribute
+    - add required date attribute
+    - add required description attribute
+    - add required schema attributes
+    - add adherence attribute
+    - add source attribute
+
+- Property Template:
+    - add required schema attributes
+    - type attribute can only be 'literal', 'resource', or 'lookup'
+    - mandatory and repeatable properties can be proper booleans OR strings (e.g. true or 'true')
+    - valueConstraint.editable attribute removed as it will always be true
+    - removed attributes that were never used or ignored in profile editor, BFE and RDF generated:
+      - valueConstraint.remark
+      - valueConstraint.repeatabe (duplicate of outer repeatable attribute)
+      - valueConstraint.validatePattern
+      - valueConstraint.valueLanguage
+      - valueConstraint.valueDataType.dataTypeLabel
+      - valueConstraint.valueDataType.dataTypeLabelHint
+      - valueConstraint.valueDataType.remark
+
+The schemas are:
+
+- https://ld4p.github.io/sinopia/schemas/0.1.0/profile.json
+- https://ld4p.github.io/sinopia/schemas/0.1.0/resource-templates-array.json
+- https://ld4p.github.io/sinopia/schemas/0.1.0/resource-template.json
+- https://ld4p.github.io/sinopia/schemas/0.1.0/property-templates-array.json
+- https://ld4p.github.io/sinopia/schemas/0.1.0/property-template.json
+
+special bonus schema
+- https://ld4p.github.io/sinopia/schemas/0.1.0/profiles-array.json
+
 
 ## Version 0.0.1
 

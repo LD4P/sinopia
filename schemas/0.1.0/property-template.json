@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ld4p.github.io/sinopia/schemas/0.1.0/property-template.json",
+  "title": "Sinopia Property Template Schema",
+  "description": "Property template for property associated with the entity described by a resource template.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": [
+    "propertyURI",
+    "propertyLabel",
+    "schema",
+    "type"
+  ],
+  "properties": {
+    "mandatory": {
+      "type": ["boolean","string"],
+      "enum": ["true", "false"],
+      "title": "Mandatory",
+      "description": "Indication that a value for the property is required.  If unspecified, defaults to false."
+    },
+    "propertyLabel": {
+      "type": "string",
+      "title": "Property Label",
+      "description": "Preferred, human readable label associated with the property.",
+      "example": [
+        "Search LCNAF/LCSH",
+        "Place of Origin of the Work (RDA 6.5)",
+        "Contents (LC-PCC PS 25.1)",
+        "Related Manifestation",
+        "Has Item"
+      ]
+    },
+    "propertyURI": {
+      "type": "string",
+      "format": "uri",
+      "title": "Property URI",
+      "description": "URI of the RDF property to be used.",
+      "example": [
+        "http://id.loc.gov/ontologies/bibframe/AdminMetadata"
+      ]
+    },
+    "remark": {
+      "type": "string",
+      "title": "Remark",
+      "description": "Comment or guiding statement intended to be presented as supplementary information in user display."
+    },
+    "repeatable": {
+      "type": ["boolean","string"],
+      "enum": ["true", "false"],
+      "title": "Repeatable",
+      "description": "Indication that the property is repeatable."
+    },
+    "resourceTemplates": {
+      "type": "array",
+      "title": "Always empty array of Resource Template References",
+      "description": "This is not currently used, but should/could replace valueConstraint.valueTemplateRefs",
+      "maxItems": 0
+    },
+    "schema": {
+      "type": "string",
+      "format": "uri",
+      "title": "URL for Property Template's JSON schema",
+      "description": "The property template adheres to the JSON schema at this URL",
+      "example": [
+        "https://ld4p.github.io/sinopia/schemas/0.1.0/property-template.json"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "enum": ["literal", "lookup", "resource"],
+      "title": "Type",
+      "description": "Type of value (literal / resource / lookup) that is allowed by this property."
+    },
+    "valueConstraint": {
+      "type": "object",
+      "title": "Value Constraint",
+      "description": "Constraint associated with the value.",
+      "properties": {
+        "valueTemplateRefs": {
+          "type": "array",
+          "title": "Array of Resource Template References (for property type resource)",
+          "description": "Array of identifiers (eventually URIs) of Resource Templates used by property type resource.",
+          "items": {
+            "type": "string"
+          },
+          "example": [
+            "['profile:bf2:Agent:Person', 'profile:bf2:Identifiers:Barcode', 'profile:bflc:Agents:PrimaryContribution']"
+          ]
+        },
+        "useValuesFrom": {
+          "type": "array",
+          "title": "Use Values From (these URIs for property type lookup)",
+          "description": "Array of Authority URIs or Vocabulary Lookup API identifiers to perform a lookup against (used by property type lookup)",
+          "items": {
+            "type": "string"
+          },
+          "example": [
+            "['http://id.loc.gov/authorities/names', 'http://mlvlp04.loc.gov:8230/resources/works', 'http://id.loc.gov/authorities/genreForms']"
+          ]
+        },
+        "valueDataType": {
+          "type": "object",
+          "title": "Value Data Types",
+          "description": "Data Type information: Type URI.",
+          "properties": {
+            "dataTypeURI": {
+              "type": "string",
+              "format": "uri",
+              "title": "Data Type URI",
+              "description": "URI for the Data Type of the Lookup Value default.",
+              "example": [
+                "http://id.loc.gov/ontologies/bibframe/Work",
+                "http://id.loc.gov/ontologies/bflc/PrimaryContribution",
+                "http://www.loc.gov/mads/rdf/v1#Affiliation"
+              ]
+            }
+          }
+        },
+        "defaults": {
+          "type": "array",
+          "title": "array of default values",
+          "description": "array of default values each comprised of default literal and URI",
+          "items": {
+            "type": "object",
+            "title": "default Literal + URI",
+            "description": "a default value is specified with a literal and a URI",
+            "required": ["defaultURI", "defaultLiteral"],
+            "properties": {
+              "defaultURI": {
+                "type": "string",
+                "format": "uri",
+                "title": "Default URI",
+                "description": "default value URI"
+              },
+              "defaultLiteral": {
+                "type": "string",
+                "title": "Default Literal",
+                "description": "default literal value"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

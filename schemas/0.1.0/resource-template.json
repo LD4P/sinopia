@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ld4p.github.io/sinopia/schemas/0.1.0/resource-template.json",
+  "type": "object",
+  "title": "Sinopia Resource Template Schema",
+  "version": "0.1.0",
+  "description": "A Resource Template construct (or hash) describes one of the various Sinopia entities (Works, Instances, Agent, etc.) associated with a given entity type and set of properties asserted against the entity.",
+  "required": [
+    "author",
+    "date",
+    "description",
+    "id",
+    "propertyTemplates",
+    "resourceURI",
+    "resourceLabel",
+    "schema"
+  ],
+  "properties": {
+    "adherence": {
+      "type": "string",
+      "title": "Adherence",
+      "description": "The standards or rules that this resource template adheres to.",
+      "example": [
+        "PCC",
+        "PCC RDA Working Group"
+      ]
+    },
+    "author": {
+      "type": "string",
+      "title": "Author",
+      "description": "Contact information associated with the resource template.",
+      "example": [
+        "PCC",
+        "Michelle Futornick",
+        "Cornell University Cataloging Department"
+      ]
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "title": "Date",
+      "description": "Date associated with the resource template.",
+      "example": [
+        "2017-05-20"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "description": "Textual description associated with the resource template.",
+      "example": [
+        "Metadata for a BIBFRAME Work Abstract entity."
+      ]
+    },
+    "id": {
+      "type": "string",
+      "title": "Resource Template Identifier",
+      "description": "Identifier associated with a resource template. Eventually, a URI.",
+      "example": [
+        "profile:bf2:AdminMetadata",
+        "http://sinopia.io/resources/common/AbstractResourceTemplate"
+      ]
+    },
+    "propertyTemplates": {
+      "$ref": "https://ld4p.github.io/sinopia/schemas/0.1.0/property-templates-array.json"
+    },
+    "remark": {
+      "type": "string",
+      "title": "Remark",
+      "description": "Comment or guiding statement intended to be presented as supplementary information in user display."
+    },
+    "resourceLabel": {
+      "type": "string",
+      "title": "Resource Label",
+      "description": "Preferred, human readable label associated with the resource template.",
+      "example": [
+        "BIBFRAME 2.0 Admin Metadata"
+      ]
+    },
+    "resourceURI": {
+      "type": "string",
+      "format": "uri",
+      "title": "Resource URI",
+      "description": "URI of the RDF resource type associated with the entity managed by this Resource Template.",
+      "example": [
+        "http://id.loc.gov/ontologies/bibframe/AdminMetadata"
+      ]
+    },
+    "schema": {
+      "type": "string",
+      "format": "uri",
+      "title": "URL for Resource Template's JSON schema",
+      "description": "The resource template adheres to the JSON schema at this URL",
+      "example": [
+        "https://ld4p.github.io/sinopia/schemas/0.1.0/resource-template.json"
+      ]
+    },
+    "source": {
+      "type": "string",
+      "format": "uri",
+      "title": "Source URI",
+      "description": "URL or URI for the resource template in the owner's source repository or space."
+    }
+  }
+}
