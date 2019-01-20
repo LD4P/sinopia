@@ -13,18 +13,19 @@ Resource Template:
 - is there a real difference between description and resourceLabel?  If not, can we remove one?
 
 Property Template:
-- conditional JSON schemas that only allow appropriate valueConstraints given the type:
-    - lookup:  
-           - require useValuesFrom and disallow valueTemplateRefs
-       - require dataTypeURI when there is a default specified
-    - resource:
-       - require valueTemplateRefs/resourceTemplates and disallow useValuesFrom and possibly defaults
-    - literal:
-       - disallow valueTemplateRefs/resourceTemplates as well as useValuesFrom
 - use resourceTemplates at outer level instead of valueConstraint.valueTemplateRefs (or move valueTemplateRefs out a level and get rid of )
 - move useValuesFrom out a level, instead of valueConstraints.useValuesFrom
 - move defaults out a level, instead of valueConstraints.defaults
 - move dataTypeURI out two levels, instead of valueConstraints.valueDataType.dataTypeURI or maybe include it within default, since it is only used for type lookup with a default.
+- conditional JSON schemas that only allow appropriate valueConstraints given the type:
+    - lookup:  
+           - require useValuesFrom and disallow valueTemplateRefs
+       - require dataTypeURI only when there is a default specified?
+    - resource:
+       - require valueTemplateRefs/resourceTemplates and disallow useValuesFrom and possibly defaults
+    - literal:
+       - disallow valueTemplateRefs/resourceTemplates as well as useValuesFrom
+       - require dataTypeURI only when there is a default specified?
 - only accept boolean (not string) for true/false.  (e.g. true not "true")
 
 ## Version 0.1.0
