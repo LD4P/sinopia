@@ -6,6 +6,7 @@
   "description": "Profile, or array of Resource Templates with some top-level metadata.",
   "version": "0.1.0",
   "required": [ "Profile" ],
+  "additionalProperties": false,
   "properties": {
     "Profile": {
       "type": "object",

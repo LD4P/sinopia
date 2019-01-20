@@ -10,6 +10,7 @@
     "propertyLabel",
     "type"
   ],
+  "additionalProperties": false,
   "properties": {
     "mandatory": {
       "type": ["boolean","string"],
