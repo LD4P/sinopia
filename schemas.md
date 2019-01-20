@@ -7,6 +7,7 @@ layout: default
 ## Version (future)
 
 Desired updates:
+- don't accept empty attributes (even if not required);  leave them out or provide a value
 
 Resource Template:
 - is there a real difference between description and resourceLabel?  If not, can we remove one?
@@ -14,7 +15,7 @@ Resource Template:
 Property Template:
 - conditional JSON schemas that only allow appropriate valueConstraints given the type:
     - lookup:  
-       - require useValuesFrom and disallow valueTemplateRefs
+           - require useValuesFrom and disallow valueTemplateRefs
        - require dataTypeURI when there is a default specified
     - resource:
        - require valueTemplateRefs/resourceTemplates and disallow useValuesFrom and possibly defaults
