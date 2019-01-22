@@ -13,6 +13,16 @@
   ],
   "additionalProperties": false,
   "properties": {
+    "author": {
+      "type": "string",
+      "title": "Author",
+      "description": "Contact information associated with the profile.",
+      "example": [
+        "PCC",
+        "Michelle Futornick",
+        "Cornell University Cataloging Department"
+      ]
+    },
     "id": {
       "type": "string",
       "title": "Resource Template Identifier",
