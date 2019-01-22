@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ld4p.github.io/sinopia/schemas/0.0.2/resource-template.json",
+  "type": "object",
+  "title": "LC Resource Template Schema (by Sinopia)",
+  "version": "0.0.2",
+  "description": "A Resource Template construct (or hash) describes one of the various Sinopia entities (Works, Instances, Agent, etc.) associated with a given entity type and set of properties asserted against the entity.",
+  "required": [
+    "id",
+    "resourceURI",
+    "resourceLabel",
+    "propertyTemplates"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "author": {
+      "type": "string",
+      "title": "Author",
+      "description": "Contact information associated with the profile.",
+      "example": [
+        "PCC",
+        "Michelle Futornick",
+        "Cornell University Cataloging Department"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "title": "Resource Template Identifier",
+      "description": "Identifier associated with a resource template. Eventually, a URI.",
+      "example": [
+        "profile:bf2:AdminMetadata",
+        "http://sinopia.io/resources/common/AbstractResourceTemplate"
+      ]
+    },
+    "propertyTemplates": {
+      "$ref": "https://ld4p.github.io/sinopia/schemas/0.0.2/property-templates-array.json"
+    },
+    "remark": {
+      "type": "string",
+      "title": "Remark",
+      "description": "Comment or guiding statement intended to be presented as supplementary information in user display."
+    },
+    "resourceLabel": {
+      "type": "string",
+      "title": "Resource Label",
+      "description": "Preferred, human readable label associated with the resource template.",
+      "example": [
+        "BIBFRAME 2.0 Admin Metadata"
+      ]
+    },
+    "resourceURI": {
+      "type": "string",
+      "format": "uri",
+      "title": "Resource URI",
+      "description": "URI of the RDF resource type associated with the entity managed by this Resource Template.",
+      "example": [
+        "http://id.loc.gov/ontologies/bibframe/AdminMetadata"
+      ]
+    }
+  }
+}

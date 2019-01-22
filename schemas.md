@@ -16,7 +16,7 @@ Property Template:
 - use resourceTemplates at outer level instead of valueConstraint.valueTemplateRefs (or move valueTemplateRefs out a level and get rid of )
 - move useValuesFrom out a level, instead of valueConstraints.useValuesFrom
 - move defaults out a level, instead of valueConstraints.defaults
-- move dataTypeURI out two levels, instead of valueConstraints.valueDataType.dataTypeURI or maybe include it within default, since it is only used for type lookup with a default.
+- move dataTypeURI out two levels, instead of valueConstraints.valueDataType.dataTypeURI or maybe include it within default, if it is only used for (type lookup with a ?) default.
 - conditional JSON schemas that only allow appropriate valueConstraints given the type:
     - lookup:  
            - require useValuesFrom and disallow valueTemplateRefs
@@ -71,6 +71,24 @@ The schemas are:
 
 special bonus schema
 - <https://ld4p.github.io/sinopia/schemas/0.1.0/profiles-array.json>
+
+
+## Version 0.0.2
+
+Version 0.0.2 JSON Schemas are the same as Version 0.0.1, but additionalProperties has been set to false for all properties of type "object".  This means the object (e.g. profile or resourceTemplate or propertyTemplate or valueConstraint ..) is not valid if it has additional properties that weren’t explicitly listed in the JSON schema.
+
+It was an oversight that this wasn't included in Version 0.0.1 schemas.
+
+Also:  resourceTemplate can have author attribute.
+
+- https://ld4p.github.io/sinopia/schemas/0.0.2/profile.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.2/resource-templates-array.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.2/resource-template.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.2/property-templates-array.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.2/property-template.json>
+
+special bonus schema
+- <https://ld4p.github.io/sinopia/schemas/0.0.2/profiles-array.json>
 
 
 ## Version 0.0.1
