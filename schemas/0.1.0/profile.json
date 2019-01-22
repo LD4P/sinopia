@@ -21,6 +21,7 @@
         "schema",
         "title"
       ],
+      "additionalProperties": false,
       "properties": {
         "adherence": {
           "type": "string",

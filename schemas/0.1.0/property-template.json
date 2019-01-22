@@ -68,6 +68,7 @@
       "type": "object",
       "title": "Value Constraint",
       "description": "Constraint associated with the value.",
+      "additionalProperties": false,
       "properties": {
         "valueTemplateRefs": {
           "type": "array",
@@ -95,6 +96,7 @@
           "type": "object",
           "title": "Value Data Types",
           "description": "Data Type information: Type URI.",
+          "additionalProperties": false,
           "properties": {
             "dataTypeURI": {
               "type": "string",
@@ -118,6 +120,7 @@
             "title": "default Literal + URI",
             "description": "a default value is specified with a literal and a URI",
             "required": ["defaultURI", "defaultLiteral"],
+            "additionalProperties": false,
             "properties": {
               "defaultURI": {
                 "type": "string",
