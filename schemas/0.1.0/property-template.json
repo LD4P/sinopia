@@ -99,6 +99,7 @@
           "title": "Value Data Types",
           "description": "Data Type information: Type URI.",
           "additionalProperties": false,
+          "required": ["dataTypeURI"],
           "properties": {
             "dataTypeURI": {
               "type": "string",
