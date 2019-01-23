@@ -91,7 +91,8 @@
           },
           "example": [
             "['http://id.loc.gov/authorities/names', 'http://mlvlp04.loc.gov:8230/resources/works', 'http://id.loc.gov/authorities/genreForms']"
-          ]
+          ],
+          "minItems": 1
         },
         "valueDataType": {
           "type": "object",
