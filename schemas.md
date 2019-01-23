@@ -13,19 +13,14 @@ Resource Template:
 - is there a real difference between description and resourceLabel?  If not, can we remove one?
 
 Property Template:
-- use resourceTemplates at outer level instead of valueConstraint.valueTemplateRefs (or move valueTemplateRefs out a level and get rid of )
+- defaults:
+    - is dataTypeURI associated with default values only? if so, adjust schema accordingly (put with defaults)
+    - is dataTypeURI required when defaults are specified? if so, adjust schema accordingly
+    - can a property with type resource have a default? if not, adjust schema accordingly
+- use resourceTemplates at outer level instead of valueConstraint.valueTemplateRefs (or move  valueTemplateRefs out a level and get rid of resourceTemplates)
 - move useValuesFrom out a level, instead of valueConstraints.useValuesFrom
 - move defaults out a level, instead of valueConstraints.defaults
 - move dataTypeURI out two levels, instead of valueConstraints.valueDataType.dataTypeURI or maybe include it within default, if it is only used for (type lookup with a ?) default.
-- conditional JSON schemas that only allow appropriate valueConstraints given the type:
-    - lookup:  
-           - require useValuesFrom and disallow valueTemplateRefs
-       - require dataTypeURI only when there is a default specified?
-    - resource:
-       - require valueTemplateRefs/resourceTemplates and disallow useValuesFrom and possibly defaults
-    - literal:
-       - disallow valueTemplateRefs/resourceTemplates as well as useValuesFrom
-       - require dataTypeURI only when there is a default specified?
 - only accept boolean (not string) for true/false.  (e.g. true not "true")
 
 ## Version 0.1.0
@@ -51,9 +46,21 @@ Changes from version 0.0.2:
 - Property Template:
     - type attribute can only be 'literal', 'resource', or 'lookup'
       - 'resource' and 'lookup' require valueConstraint
+    - conditional JSON schemas that only allow appropriate valueConstraints given the type:
+      - lookup:
+        - require useValuesFrom and disallow valueTemplateRefs
+        - (also disallow resourceTemplates)
+      - resource:
+        - require valueTemplateRefs and disallow useValuesFrom
+      - literal:
+        - disallow valueTemplateRefs as well as useValuesFrom
+        - (also disallow resourceTemplates)
     - mandatory and repeatable properties can be proper booleans OR strings (e.g. true or 'true')
-    - valueConstraint.editable attribute removed as it will always be true
     - valueConstraint can have at most one of useValuesFrom, valueTemplateRefs
+    - valueConstaint.useValuesFrom requires at least one entry (or it shouldn't be present)
+    - valueConstaint.valueTemplateRefs requires at least one entry (or it shouldn't be present)
+    - valueConstraint.valueDataType requires dataTypeURI (or it shouldn't be present)
+    - valueConstraint.editable attribute removed as it will always be true
     - removed attributes that were never used or ignored in profile editor, BFE and RDF generated:
       - valueConstraint.remark
       - valueConstraint.repeatabe (duplicate of outer repeatable attribute)
