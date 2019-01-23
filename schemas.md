@@ -50,8 +50,10 @@ Changes from version 0.0.2:
 
 - Property Template:
     - type attribute can only be 'literal', 'resource', or 'lookup'
+      - 'resource' and 'lookup' require valueConstraint
     - mandatory and repeatable properties can be proper booleans OR strings (e.g. true or 'true')
     - valueConstraint.editable attribute removed as it will always be true
+    - valueConstraint can have at most one of useValuesFrom, valueTemplateRefs
     - removed attributes that were never used or ignored in profile editor, BFE and RDF generated:
       - valueConstraint.remark
       - valueConstraint.repeatabe (duplicate of outer repeatable attribute)
