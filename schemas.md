@@ -32,7 +32,7 @@ Property Template:
 
 Version 0.1.0 JSON Schemas are streamlined for Sinopia work.  
 
-Changes from version 0.0.1:
+Changes from version 0.0.2:
 
 - Profile:
     - require author attribute
@@ -41,7 +41,7 @@ Changes from version 0.0.1:
     - add source attribute
 
 - Resource Template:
-    - add required author attribute
+    - require author attribute
     - add required date attribute
     - add required description attribute
     - add required schema attributes
@@ -50,8 +50,10 @@ Changes from version 0.0.1:
 
 - Property Template:
     - type attribute can only be 'literal', 'resource', or 'lookup'
+      - 'resource' and 'lookup' require valueConstraint
     - mandatory and repeatable properties can be proper booleans OR strings (e.g. true or 'true')
     - valueConstraint.editable attribute removed as it will always be true
+    - valueConstraint can have at most one of useValuesFrom, valueTemplateRefs
     - removed attributes that were never used or ignored in profile editor, BFE and RDF generated:
       - valueConstraint.remark
       - valueConstraint.repeatabe (duplicate of outer repeatable attribute)

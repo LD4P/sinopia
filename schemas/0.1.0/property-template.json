@@ -136,7 +136,33 @@
             }
           }
         }
+      },
+      "dependencies": {
+        "valueTemplateRefs": { "not": { "required": ["useValuesFrom"] } },
+        "useValuesFrom": { "not": { "required": ["valueTemplateRefs"] } }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": { "const": "lookup" }
+        }
+      },
+      "then": {
+        "required": ["valueConstraint"]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": { "const": "resource" }
+        }
+      },
+      "then": {
+        "required": ["valueConstraint"]
+      }
+    }
+  ]
 }
