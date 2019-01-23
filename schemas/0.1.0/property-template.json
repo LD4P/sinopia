@@ -140,6 +140,7 @@
           }
         }
       },
+      "$comment": "Use at most one of useValuesFrom, valueTemplateRefs",
       "dependencies": {
         "valueTemplateRefs": { "not": { "required": ["useValuesFrom"] } },
         "useValuesFrom": { "not": { "required": ["valueTemplateRefs"] } }
@@ -154,7 +155,11 @@
         }
       },
       "then": {
-        "required": ["valueConstraint"]
+        "$comment": "forbid resourceTemplates and require valueConstraint.useValuesFrom",
+        "allOf": [
+          { "not": { "required": ["resourceTemplates"] } },
+          { "$ref": "#/definitions/requires-valueConstraint-useValuesFrom" }
+        ]
       }
     },
     {
@@ -164,8 +169,48 @@
         }
       },
       "then": {
-        "required": ["valueConstraint"]
+        "$comment": "require valueConstraint.valueTemplateRefs",
+        "$ref": "#/definitions/requires-valueConstraint-valueTemplateRefs"
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": { "const": "literal" }
+        }
+      },
+      "then": {
+        "$comment": "forbid resourceTemplates, valueConstraint.useValuesFrom and valueConstraint.valueTemplateRefs",
+        "allOf": [
+          { "not": { "required": ["resourceTemplates"] } },
+          { "$ref": "#/definitions/valueConstraint-requires-neither-templateRefs-nor-valuesFrom" }
+        ]
       }
     }
-  ]
+  ],
+  "definitions": {
+    "requires-valueConstraint-useValuesFrom": {
+      "required": ["valueConstraint"],
+      "properties": {
+        "valueConstraint" : {
+          "required": ["useValuesFrom"]
+        }
+      }
+    },
+    "requires-valueConstraint-valueTemplateRefs": {
+      "required": ["valueConstraint"],
+      "properties": {
+        "valueConstraint" : {
+          "required": ["valueTemplateRefs"]
+        }
+      }
+    },
+    "valueConstraint-requires-neither-templateRefs-nor-valuesFrom": {
+      "properties": {
+        "valueConstraint" : {
+          "not": { "required": [ "useValuesFrom", "valueTemplateRefs"] }
+        }
+      }
+    }
+  }
 }
