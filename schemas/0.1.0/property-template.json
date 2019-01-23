@@ -79,7 +79,8 @@
           },
           "example": [
             "['profile:bf2:Agent:Person', 'profile:bf2:Identifiers:Barcode', 'profile:bflc:Agents:PrimaryContribution']"
-          ]
+          ],
+          "minItems": 1
         },
         "useValuesFrom": {
           "type": "array",
