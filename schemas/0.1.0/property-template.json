@@ -170,7 +170,9 @@
       },
       "then": {
         "$comment": "require valueConstraint.valueTemplateRefs",
-        "$ref": "#/definitions/requires-valueConstraint-valueTemplateRefs"
+        "allOf": [
+          { "$ref": "#/definitions/requires-valueConstraint-valueTemplateRefs" }
+        ]
       }
     },
     {
