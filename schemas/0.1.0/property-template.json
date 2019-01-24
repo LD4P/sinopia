@@ -210,7 +210,10 @@
     "valueConstraint-requires-neither-templateRefs-nor-valuesFrom": {
       "properties": {
         "valueConstraint" : {
-          "not": { "required": [ "useValuesFrom", "valueTemplateRefs"] }
+          "allOf": [
+            { "not": { "required": [ "useValuesFrom" ] } },
+            { "not": { "required": [ "valueTemplateRefs" ] } }
+          ]
         }
       }
     }
