@@ -84,13 +84,13 @@ special bonus schema
 
 ## Version 0.0.2
 
-Version 0.0.2 JSON Schemas are the same as Version 0.0.1, but additionalProperties has been set to false for all properties of type "object".  This means the object (e.g. profile or resourceTemplate or propertyTemplate or valueConstraint ..) is not valid if it has additional properties that weren’t explicitly listed in the JSON schema.
+Version 0.0.2 JSON Schemas are the same as Version 0.0.1, but additionalProperties has been set to false for all properties of type "object".  This means the object (e.g. profile or resourceTemplate or propertyTemplate or valueConstraint ...) is not valid if it has additional properties that weren’t explicitly listed in the JSON schema.
 
 It was an oversight that this wasn't included in Version 0.0.1 schemas.
 
 Also:  resourceTemplate can have author attribute.
 
-- https://ld4p.github.io/sinopia/schemas/0.0.2/profile.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.2/profile.json>
 - <https://ld4p.github.io/sinopia/schemas/0.0.2/resource-templates-array.json>
 - <https://ld4p.github.io/sinopia/schemas/0.0.2/resource-template.json>
 - <https://ld4p.github.io/sinopia/schemas/0.0.2/property-templates-array.json>
