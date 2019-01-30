@@ -28,6 +28,7 @@ plugins:
 
 logo: assets/img/logo.jpeg
 show_downloads: true
+show_dir_listing: true
 project_wiki: https://wiki.duraspace.org/pages/viewpage.action?pageId=101783799
 project_issues: https://waffle.io/LD4P/sinopia
 
