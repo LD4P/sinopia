@@ -13,7 +13,7 @@
   "additionalProperties": false,
   "properties": {
     "mandatory": {
-      "type": ["boolean","string"],
+      "type": ["boolean", "string"],
       "enum": ["true", "false"],
       "title": "Mandatory",
       "description": "Indication that a value for the property is required. If unspecified, defaults to false.",
@@ -23,6 +23,7 @@
       "type": "string",
       "title": "Property Label",
       "description": "Preferred, human readable label associated with the property.",
+      "minLength": 3,
       "example": [
         "Search LCNAF/LCSH",
         "Place of Origin of the Work (RDA 6.5)",
@@ -36,6 +37,7 @@
       "format": "uri",
       "title": "Property URI",
       "description": "URI of the RDF property to be used.",
+      "minLength": 8,
       "example": [
         "http://id.loc.gov/ontologies/bibframe/AdminMetadata"
       ]
@@ -43,7 +45,13 @@
     "remark": {
       "type": "string",
       "title": "Remark",
-      "description": "Comment or guiding statement intended to be presented as supplementary information in user display."
+      "description": "Comment or guiding statement intended to be presented as supplementary information in user display.",
+      "minLength": 3,
+      "example": [
+        "http://access.rdatoolkit.org/6.17.html",
+        "http://www.loc.gov/mads/rdf/v1#",
+        "https://www.loc.gov/standards/mods/userguide/recordinfo.html#recordidentifier"
+      ]
     },
     "repeatable": {
       "type": ["boolean","string"],
@@ -77,10 +85,10 @@
           "items": {
             "type": "string"
           },
+          "minItems": 1,
           "example": [
-            "['profile:bf2:Agent:Person', 'profile:bf2:Identifiers:Barcode', 'profile:bflc:Agents:PrimaryContribution']"
-          ],
-          "minItems": 1
+            "['sinopia:resourceTemplate:bf2:Agent:Person', 'sinopia:resourceTemplate:bf2:Identifiers:Barcode', 'sinopia:resourceTemplate:bflc:Agents:PrimaryContribution']"
+          ]
         },
         "useValuesFrom": {
           "type": "array",
@@ -89,10 +97,10 @@
           "items": {
             "type": "string"
           },
+          "minItems": 1,
           "example": [
             "['http://id.loc.gov/authorities/names', 'http://mlvlp04.loc.gov:8230/resources/works', 'http://id.loc.gov/authorities/genreForms']"
-          ],
-          "minItems": 1
+          ]
         },
         "valueDataType": {
           "type": "object",
@@ -106,6 +114,7 @@
               "format": "uri",
               "title": "Data Type URI",
               "description": "URI for the Data Type of the Lookup Value default.",
+              "minLength": 5,
               "example": [
                 "http://id.loc.gov/ontologies/bibframe/Work",
                 "http://id.loc.gov/ontologies/bflc/PrimaryContribution",
@@ -129,12 +138,22 @@
                 "type": "string",
                 "format": "uri",
                 "title": "Default URI",
-                "description": "default value URI"
+                "description": "default value URI",
+                "minLength": 5,
+                "examples": [
+                  "http://id.loc.gov/vocabulary/contentTypes/prm",
+                  "http://id.loc.gov/vocabulary/subjectSchemes/lcsh"
+                ]
               },
               "defaultLiteral": {
                 "type": "string",
                 "title": "Default Literal",
-                "description": "default literal value"
+                "description": "default literal value",
+                "minLength": 1,
+                "examples": [
+                  "performed music",
+                  "LCSH"
+                ]
               }
             }
           }
