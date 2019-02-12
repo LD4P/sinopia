@@ -37,7 +37,6 @@ Changes from version 0.0.2:
 - Resource Template:
     - require author attribute
     - add required date attribute
-    - add required description attribute
     - add required schema attributes
     - add adherence attribute
     - add source attribute

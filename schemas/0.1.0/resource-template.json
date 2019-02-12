@@ -47,15 +47,6 @@
         "2017-05-20"
       ]
     },
-    "description": {
-      "type": "string",
-      "title": "Description",
-      "description": "Textual description associated with the resource template.",
-      "minLength": 3,
-      "example": [
-        "Metadata for a BIBFRAME Work Abstract entity."
-      ]
-    },
     "id": {
       "type": "string",
       "title": "Resource Template Identifier",
