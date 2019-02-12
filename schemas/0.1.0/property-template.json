@@ -188,9 +188,9 @@
         }
       },
       "then": {
-        "$comment": "require valueConstraint.valueTemplateRefs",
+        "$comment": "require valueConstraint.valueTemplateRefs and forbid defaults",
         "allOf": [
-          { "$ref": "#/definitions/requires-valueConstraint-valueTemplateRefs" }
+          { "$ref": "#/definitions/requires-valueConstraint-valueTemplateRefs-forbids-defaults" }
         ]
       }
     },
@@ -218,11 +218,14 @@
         }
       }
     },
-    "requires-valueConstraint-valueTemplateRefs": {
+    "requires-valueConstraint-valueTemplateRefs-forbids-defaults": {
       "required": ["valueConstraint"],
       "properties": {
         "valueConstraint" : {
-          "required": ["valueTemplateRefs"]
+          "allOf": [
+            { "required": ["valueTemplateRefs"] },
+            { "not": { "required": [ "defaults" ] } }
+          ]
         }
       }
     },

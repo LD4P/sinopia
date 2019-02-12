@@ -16,7 +16,6 @@ Property Template:
 - defaults:
     - is dataTypeURI associated with default values only? if so, adjust schema accordingly (put with defaults)
     - is dataTypeURI required when defaults are specified? if so, adjust schema accordingly
-    - can a property with type resource have a default? if not, adjust schema accordingly
 - use resourceTemplates at outer level instead of valueConstraint.valueTemplateRefs (or move  valueTemplateRefs out a level and get rid of resourceTemplates)
 - move useValuesFrom out a level, instead of valueConstraints.useValuesFrom
 - move defaults out a level, instead of valueConstraints.defaults
@@ -52,6 +51,7 @@ Changes from version 0.0.2:
         - (also disallow resourceTemplates)
       - resource:
         - require valueTemplateRefs and disallow useValuesFrom
+        - disallow defaults
       - literal:
         - disallow valueTemplateRefs as well as useValuesFrom
         - (also disallow resourceTemplates)
