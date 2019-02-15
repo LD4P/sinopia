@@ -24,7 +24,55 @@ Property Template:
 
 ## Version 0.1.0
 
-Version 0.1.0 JSON Schemas are streamlined for Sinopia work.  
+Version 0.1.0 has more stringent requirements than version 0.0.9, based on how the editor uses the templates.
+It also tries to avoid noise in the templates by forbidding empty attributes.
+
+Changes from version 0.0.9:
+
+- If properties are present, they must not be empty.
+
+- Profile
+    - update schema attribute version
+
+- Resource Template:
+    - require author attribute
+    - require date attribute
+    - update schema attribute version
+
+- Property Template:
+    - conditional JSON schemas that only allow appropriate valueConstraints given the type:
+      - lookup:
+        - disallow valueTemplateRefs
+        - (also disallow resourceTemplates)
+      - resource:
+        - disallow useValuesFrom
+        - disallow defaults
+      - literal:
+        - disallow valueTemplateRefs as well as useValuesFrom
+        - (also disallow resourceTemplates)
+    - type attribute can only be 'literal', 'resource', or 'lookup'
+        - 'resource' and 'lookup' require valueConstraint
+
+    - valueConstraint can have at most one of useValuesFrom, valueTemplateRefs
+    - valueConstaint.useValuesFrom requires at least one entry (or it shouldn't be present)
+    - valueConstaint.valueTemplateRefs requires at least one entry (or it shouldn't be present)
+    - valueConstraint.valueDataType requires dataTypeURI (or it shouldn't be present)
+
+The schemas are:
+
+- <https://ld4p.github.io/sinopia/schemas/0.1.0/profile.json>
+- <https://ld4p.github.io/sinopia/schemas/0.1.0/resource-templates-array.json>
+- <https://ld4p.github.io/sinopia/schemas/0.1.0/resource-template.json>
+- <https://ld4p.github.io/sinopia/schemas/0.1.0/property-templates-array.json>
+- <https://ld4p.github.io/sinopia/schemas/0.1.0/property-template.json>
+
+special bonus schema
+- <https://ld4p.github.io/sinopia/schemas/0.1.0/profiles-array.json>
+
+
+## Version 0.0.9
+
+Version 0.0.9 JSON Schemas are streamlined for Sinopia work.
 
 Changes from version 0.0.2:
 
@@ -35,30 +83,20 @@ Changes from version 0.0.2:
     - add source attribute
 
 - Resource Template:
-    - require author attribute
-    - add required date attribute
     - add required schema attributes
     - add adherence attribute
+    - add author attribute
+    - add date attribute
     - add source attribute
 
 - Property Template:
     - type attribute can only be 'literal', 'resource', or 'lookup'
-      - 'resource' and 'lookup' require valueConstraint
-    - conditional JSON schemas that only allow appropriate valueConstraints given the type:
+    - conditional JSON schemas that require appropriate valueConstraints given the type:
       - lookup:
-        - require useValuesFrom and disallow valueTemplateRefs
-        - (also disallow resourceTemplates)
+        - require valueConstraints.useValuesFrom
       - resource:
-        - require valueTemplateRefs and disallow useValuesFrom
-        - disallow defaults
-      - literal:
-        - disallow valueTemplateRefs as well as useValuesFrom
-        - (also disallow resourceTemplates)
+        - require valueConstraints.valueTemplateRefs
     - mandatory and repeatable properties can be proper booleans OR strings (e.g. true or 'true')
-    - valueConstraint can have at most one of useValuesFrom, valueTemplateRefs
-    - valueConstaint.useValuesFrom requires at least one entry (or it shouldn't be present)
-    - valueConstaint.valueTemplateRefs requires at least one entry (or it shouldn't be present)
-    - valueConstraint.valueDataType requires dataTypeURI (or it shouldn't be present)
     - valueConstraint.editable attribute removed as it will always be true
     - removed attributes that were never used or ignored in profile editor, BFE and RDF generated:
       - valueConstraint.remark
@@ -71,14 +109,14 @@ Changes from version 0.0.2:
 
 The schemas are:
 
-- <https://ld4p.github.io/sinopia/schemas/0.1.0/profile.json>
-- <https://ld4p.github.io/sinopia/schemas/0.1.0/resource-templates-array.json>
-- <https://ld4p.github.io/sinopia/schemas/0.1.0/resource-template.json>
-- <https://ld4p.github.io/sinopia/schemas/0.1.0/property-templates-array.json>
-- <https://ld4p.github.io/sinopia/schemas/0.1.0/property-template.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.9/profile.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.9/resource-templates-array.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.9/resource-template.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.9/property-templates-array.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.9/property-template.json>
 
 special bonus schema
-- <https://ld4p.github.io/sinopia/schemas/0.1.0/profiles-array.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.9/profiles-array.json>
 
 
 ## Version 0.0.2
