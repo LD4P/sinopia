@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://ld4p.github.io/sinopia/schemas/0.0.9/profiles-array.json",
+  "title": "Profile Array Schema (i.e. Multiple Profiles) (by Sinopia)",
+  "version": "0.0.9",
+  "type": "array",
+  "items": {
+    "$ref": "https://ld4p.github.io/sinopia/schemas/0.0.9/profile.json"
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ld4p.github.io/sinopia/schemas/0.0.9/property-template.json",
+  "title": "Sinopia Property Template Schema",
+  "description": "Property template for property associated with the entity described by a resource template.",
+  "version": "0.0.9",
+  "type": "object",
+  "required": [
+    "propertyURI",
+    "propertyLabel",
+    "type"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "mandatory": {
+      "type": ["boolean", "string"],
+      "enum": ["true", "false"],
+      "title": "Mandatory",
+      "description": "Indication that a value for the property is required. If unspecified, defaults to false.",
+      "default": false
+    },
+    "propertyLabel": {
+      "type": "string",
+      "title": "Property Label",
+      "description": "Preferred, human readable label associated with the property.",
+      "minLength": 3,
+      "example": [
+        "Search LCNAF/LCSH",
+        "Place of Origin of the Work (RDA 6.5)",
+        "Contents (LC-PCC PS 25.1)",
+        "Related Manifestation",
+        "Has Item"
+      ]
+    },
+    "propertyURI": {
+      "type": "string",
+      "format": "uri",
+      "title": "Property URI",
+      "description": "URI of the RDF property to be used.",
+      "minLength": 8,
+      "example": [
+        "http://id.loc.gov/ontologies/bibframe/AdminMetadata"
+      ]
+    },
+    "remark": {
+      "type": "string",
+      "title": "Remark",
+      "description": "Comment or guiding statement intended to be presented as supplementary information in user display.",
+      "example": [
+        "http://access.rdatoolkit.org/6.17.html",
+        "http://www.loc.gov/mads/rdf/v1#",
+        "https://www.loc.gov/standards/mods/userguide/recordinfo.html#recordidentifier"
+      ]
+    },
+    "repeatable": {
+      "type": ["boolean","string"],
+      "enum": ["true", "false"],
+      "title": "Repeatable",
+      "description": "Indication that the property is repeatable. If unspecified, defaults to true.",
+      "default": true
+    },
+    "resourceTemplates": {
+      "type": "array",
+      "title": "Always empty array of Resource Template References",
+      "description": "This is not currently used, but should/could replace valueConstraint.valueTemplateRefs",
+      "maxItems": 0
+    },
+    "type": {
+      "type": "string",
+      "enum": ["literal", "lookup", "resource"],
+      "title": "Type",
+      "description": "Type of value (literal / resource / lookup) that is allowed by this property."
+    },
+    "valueConstraint": {
+      "type": "object",
+      "title": "Value Constraint",
+      "description": "Constraint associated with the value.",
+      "additionalProperties": false,
+      "properties": {
+        "valueTemplateRefs": {
+          "type": "array",
+          "title": "Array of Resource Template References (for property type resource)",
+          "description": "Array of identifiers (eventually URIs) of Resource Templates used by property type resource.",
+          "items": {
+            "type": "string"
+          },
+          "example": [
+            "['sinopia:resourceTemplate:bf2:Agent:Person', 'sinopia:resourceTemplate:bf2:Identifiers:Barcode', 'sinopia:resourceTemplate:bflc:Agents:PrimaryContribution']"
+          ]
+        },
+        "useValuesFrom": {
+          "type": "array",
+          "title": "Use Values From (these URIs for property type lookup)",
+          "description": "Array of Authority URIs or Vocabulary Lookup API identifiers to perform a lookup against (used by property type lookup)",
+          "items": {
+            "type": "string"
+          },
+          "example": [
+            "['http://id.loc.gov/authorities/names', 'http://mlvlp04.loc.gov:8230/resources/works', 'http://id.loc.gov/authorities/genreForms']"
+          ]
+        },
+        "valueDataType": {
+          "type": "object",
+          "title": "Value Data Types",
+          "description": "Data Type information: Type URI.",
+          "additionalProperties": false,
+          "properties": {
+            "dataTypeURI": {
+              "type": "string",
+              "format": "uri",
+              "title": "Data Type URI",
+              "description": "URI for the Data Type of the Lookup Value default.",
+              "example": [
+                "http://id.loc.gov/ontologies/bibframe/Work",
+                "http://id.loc.gov/ontologies/bflc/PrimaryContribution",
+                "http://www.loc.gov/mads/rdf/v1#Affiliation"
+              ]
+            }
+          }
+        },
+        "defaults": {
+          "type": "array",
+          "title": "array of default values",
+          "description": "array of default values each comprised of default literal and URI",
+          "items": {
+            "type": "object",
+            "title": "default Literal + URI",
+            "description": "a default value is specified with a literal and a URI",
+            "required": ["defaultURI", "defaultLiteral"],
+            "additionalProperties": false,
+            "properties": {
+              "defaultURI": {
+                "type": "string",
+                "format": "uri",
+                "title": "Default URI",
+                "description": "default value URI",
+                "examples": [
+                  "http://id.loc.gov/vocabulary/contentTypes/prm",
+                  "http://id.loc.gov/vocabulary/subjectSchemes/lcsh"
+                ]
+              },
+              "defaultLiteral": {
+                "type": "string",
+                "title": "Default Literal",
+                "description": "default literal value",
+                "examples": [
+                  "performed music",
+                  "LCSH"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": { "const": "lookup" }
+        }
+      },
+      "then": {
+        "$comment": "require valueConstraint.useValuesFrom",
+        "$ref": "#/definitions/requires-valueConstraint-useValuesFrom"
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": { "const": "resource" }
+        }
+      },
+      "then": {
+        "$comment": "require valueConstraint.valueTemplateRefs and forbid defaults",
+        "allOf": [
+          { "$ref": "#/definitions/requires-valueConstraint-valueTemplateRefs" }
+        ]
+      }
+    }
+  ],
+  "definitions": {
+    "requires-valueConstraint-useValuesFrom": {
+      "required": ["valueConstraint"],
+      "properties": {
+        "valueConstraint" : {
+          "required": ["useValuesFrom"]
+        }
+      }
+    },
+    "requires-valueConstraint-valueTemplateRefs": {
+      "required": ["valueConstraint"],
+      "properties": {
+        "valueConstraint" : {
+          "required": ["valueTemplateRefs"]
+        }
+      }
+    },
+    "requires-valueConstraint-valueTemplateRefs-forbids-defaults": {
+      "required": ["valueConstraint"],
+      "properties": {
+        "valueConstraint" : {
+          "allOf": [
+            { "required": ["valueTemplateRefs"] },
+            { "not": { "required": [ "defaults" ] } }
+          ]
+        }
+      }
+    },
+    "valueConstraint-requires-neither-templateRefs-nor-valuesFrom": {
+      "properties": {
+        "valueConstraint" : {
+          "allOf": [
+            { "not": { "required": [ "useValuesFrom" ] } },
+            { "not": { "required": [ "valueTemplateRefs" ] } }
+          ]
+        }
+      }
+    }
+  }
+}
