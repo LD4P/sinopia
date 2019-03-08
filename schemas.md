@@ -42,16 +42,16 @@ Changes from version 0.0.9:
 - Property Template:
     - conditional JSON schemas that only allow appropriate valueConstraints given the type:
       - lookup:
+        - require valueConstraint
         - disallow valueTemplateRefs
         - (also disallow resourceTemplates)
       - resource:
+        - require valueConstraint
         - disallow useValuesFrom
         - disallow defaults
       - literal:
         - disallow valueTemplateRefs as well as useValuesFrom
         - (also disallow resourceTemplates)
-    - type attribute can only be 'literal', 'resource', or 'lookup'
-        - 'resource' and 'lookup' require valueConstraint
 
     - valueConstraint can have at most one of useValuesFrom, valueTemplateRefs
     - valueConstaint.useValuesFrom requires at least one entry (or it shouldn't be present)
