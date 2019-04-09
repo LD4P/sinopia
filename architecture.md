@@ -59,10 +59,10 @@ These are a list of "dataflow" and sequence diagrams to help unravel the expecte
 
 ### Create New Profile
 
-### Loading Profile
+### Loading Resource Template contained in a Profile
 
-Option 1: Select Profile from Most Used
-   1. Profile pulled from database
+Option 1: Select Resource Template from a List
+   1. Resource Template pulled from database
    2. Profile loaded into Editor
    3. User redirected to Editor with that Profile (next step)
 
@@ -76,7 +76,14 @@ Option 2: Search & Select Profile
 
 ### Edit Existing Profile
 
-WIP.
+Editing an existing Profile is done in these steps:
+  1. Load an existing Profile file from your local file system
+     in the [Sinopia Profile Editor][PRO_EDIT].
+  1. Make changes to the loaded resource templates and export to 
+     your local filesystem.
+  1. Creatie a pull request on the 
+[Sinopia Sample Profiles](https://github.com/LD4P/sinopia_sample_profiles) 
+     Github repository 
 
 
 ### Delete Existing Profile
@@ -102,7 +109,14 @@ WIP.
 
 ### Sinopia / QA Form Type-Ahead
 
-WIP.
+The React `InputLookupQA` component uses a configuration JSON feed to 
+query authorities in the Questioning Authority lookup service.  
+
+
+### Sinopia / Library of Congress Type-Ahead
+The React `InputListLOC` component uses a configurable JSON feed to
+query specific Library of Congress resources typically from their 
+Linked Data service at [http://id.loc.gov](http://id.loc.gov/).
 
 ### Sinopia / QA Form Contextual Lookup
 
@@ -110,8 +124,6 @@ WIP.
 <small>[link to diagram](https://docs.google.com/drawings/d/1Bo-hCtPg1gQVJZWtVdbJGLo74_GM4RL7tfotnU6HTPs/edit)</small>
 
 ### Sinopia / QA External Keyword Search
-
-WIP.
 
 ### Sinopia / Internal Form Type-Ahead
 
@@ -132,3 +144,7 @@ WIP.
 # Original Whiteboard Photos
 
 See https://drive.google.com/drive/u/1/folders/1ynnPhdQGRDMkrpEpcmsjxBD5TqpovoBS
+
+[HOME]: https://sinopia.io/
+[EDITOR]: https://sinopia.io/editor
+[PRO_EDIT]: https://profile-editor.sinopia.io/
