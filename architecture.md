@@ -32,7 +32,12 @@ This is a high-level diagram of the full Sinopia system and it's components. Whe
 
 ### Integration Points & Interfaces (External ReST APIs or other)
 
-WIP. See [the work here](/sinopia/external-data) that is specifically about Sinopia Editor & QA-inspired Lookup API interactions.
+We are publishing the [Sinopia Client](https://github.com/LD4P/sinopia_server/tree/master/sinopia_client) as an node.js module that can be imported into Javascript 
+source code. This allows any Javascript-based project to integrate 
+the Sinopia Server into their systems and provides a Swagger API for interacting 
+with the Sinopia Stack.
+
+See [the work here](/sinopia/external-data) that is specifically about Sinopia Editor & QA-inspired Lookup API interactions.
 
 # Dataflow & Interaction Diagram
 

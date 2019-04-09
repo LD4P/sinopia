@@ -2,9 +2,6 @@
 layout: default
 ---
 
-Work in progress.
-
-
 ## In Scope:
 * Baseline profile editor that returns profile to user as JSON (we do not store or automatically load profiles)
 * Editor of RDF data driven by a specified profile
@@ -22,6 +19,4 @@ Work in progress.
 * External discovery layer (i.e. a public search interface)
 * Reasoning engines, inferencing, or entailment
 * Complex semantic validation
-
-## Uncertain
 * SPARQL support or usage
