@@ -62,7 +62,8 @@ With a Profile in hand, a user would load that Profile into the Sinopia Editor t
 * _Requirement:_ 'Lookup': Sinopia Editor Form should allow in-form contextual lookups that provide enough contextual information about the look-up results that users can select the correct entity.
 * _Requirement:_ The Sinopia Editor Form must allow limiting of Lookups to specified vocabularies (specified in the Metadata Profile) if the specified vocabulary is supported by itself in QA.
 * _Requirement:_ If Lookup fails for the User (i.e. the desired entity cannot be found), the User should be able to create the desired entity using an appropriate Metadata Profile within the Sinopia Editor and persist that entity to Sinopia.
-* _Requirement:_ 'Clone': Ability to import existing (external or internal) data from already cataloged resources into Sinopia Editor Form & use that data as base for creating an alternate Sinopia resource that has a default `skos:sameAs` reference to the original entity but allows the user to edit that entity's metadata.
+* _Requirement:_ 'Clone': Ability to import existing (external or internal) data from already cataloged resources into Sinopia Editor Form & use that data as base for creating an alternate Sinopia resource that has a default `owl:sameAs` reference to the original entity but allows the user to edit that entity's metadata.
+
 * _Constraint:_ Any entities 'imported' (via Copy or Clone, via GUI form or programmatically) into Sinopia becomes a Sinopia entity (i.e. has a namespace based on Sinopia domain and the appropriate authorization group). This does not apply to *pointers to* external URIs (i.e. when a URI is the object of a statement).
 * _Request:_ Allow look-ups based on different external entity matching points (i.e. fielded search). This requires work on the QA side.
 * _Request:_ The Sinopia Editor Form should support keyboard-based navigation through a form in addition to mouse-driven navigation.
