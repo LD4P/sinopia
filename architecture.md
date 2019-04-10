@@ -66,13 +66,14 @@ Option 1: Select Resource Template from a List
    2. Profile loaded into Editor
    3. User redirected to Editor with that Profile (next step)
 
-Option 2: Search & Select Profile
-  1. Enter Profile search term (label, author, date, keyword) in Profiles search
-  2. View Profile results (list of Profile metadata)
-  3. User selects profile
-  4. Profile pulled from database
-  5. Profile loaded into Editor
-  6. User redirected to Editor with that Profile (next step)
+Option 2: Search & Select Resource Templates
+  1. Enter Profile search term (label, author, date, keyword) in Resource 
+     Template search
+  2. View search results 
+  3. User selects Resource Template
+  4. Resource Template pulled from database
+  5. Resource Template loaded into Editor
+  6. User redirected to Editor with that Resource Template loaded 
 
 ### Edit Existing Profile
 
@@ -81,23 +82,37 @@ Editing an existing Profile is done in these steps:
      in the [Sinopia Profile Editor][PRO_EDIT].
   1. Make changes to the loaded resource templates and export to 
      your local filesystem.
-  1. Creatie a pull request on the 
+  1. Create a pull request on the 
 [Sinopia Sample Profiles](https://github.com/LD4P/sinopia_sample_profiles) 
      Github repository 
+  1. Log into Sinopia
+  1. Go to the **Linked Data Editor** and then click on the 
+     **Import Resource Template** tab
+  1. The existing Resource Templates in the Profile will be overridden, new
+     Resource Templates in the Profile will be added to the Sinopia Server
 
 
-### Delete Existing Profile
+### Delete Existing Resource Template
 
-WIP.
+Deleting an existing resource template from Sinopia is not part of the MVP
+scoped work on the editor. Sinopia administrators will be able to manually delete 
+resource templates from the Sinopia Server.
 
 ### Create New Entity
+The Linked Data Editor is used to create a new entities in Sinopia. When a 
+Resource Template is loaded into the Editor and data is entered by the user, the
+user can save the RDF at which point a new entity is created in Sinopia with the
+generated RDF from the user interface.   
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vSUaCxlon2o5G0hCCrP5Eg5GcZEK8mtRcpWrs1zO0PMTlF2i5z4ThH44nwGUWicr5o9b3Ufb0NT0c05/pub?w=2027&h=723)
 <small>[link to diagram](https://docs.google.com/drawings/d/14hRHdepWbYrZn5jzfBxXY210H_a3FutAYZV5Mj82ZM4/edit)</small>
 
 ### Create New Entity with Context
-
-WIP.
+As part of the MVP, users can also 
+click on the **Mint URI** button for a Property Template and a new entity will
+be created in Sinopia with that entity's data saved in Sinopia Server, and that
+new entity's URI associated as a RDF Object in the calling Resource Template RDF
+context. 
 
 ### Edit Existing Entity
 
