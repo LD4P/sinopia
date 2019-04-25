@@ -49,6 +49,7 @@
       "title": "Resource Template Identifier",
       "description": "Identifier associated with a resource template. Eventually, a URI.",
       "minLength": 3,
+      "pattern": "^\\S+$",
       "example": [
         "profile:bf2:AdminMetadata",
         "http://sinopia.io/resources/common/AbstractResourceTemplate"
