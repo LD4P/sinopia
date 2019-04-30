@@ -26,6 +26,10 @@ plugins:
   - jekyll-feed
   - jekyll-remote-theme
 
+webrick:
+  headers:
+    Access-Control-Allow-Origin: "*"
+
 logo: assets/img/logo.jpeg
 show_downloads: true
 show_dir_listing: true
@@ -56,3 +60,5 @@ menu:
     menu-url: /sinopia/models
   - menu-label: JSON schemas for Profiles and ResourceTemplates
     menu-url: /sinopia/schemas
+  - menu-label: Sinopia Help and Resources
+    menu-url: /sinopia/help_and_resources/menu.html
