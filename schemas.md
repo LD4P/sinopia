@@ -72,7 +72,14 @@ special bonus schema
 
 ## Version 0.0.9
 
-Version 0.0.9 JSON Schemas are streamlined for Sinopia work.
+Tweak made 2019-05-14:  (
+- This was a small, well tested, backwards compatible tweak and we chose NOT to create a new version of the JSON schemas for more seamless backwards compatibility (and against string semantic versioning).
+- Property Template:
+    - valueConstraint.defaults
+      - `defaultURI` is now an ordinary string; URI format is not required.  This allows for `defaultURI` to be an empty string.
+      - `defaults` array's objects have no required fields.  This allows for either or both of `defaultURI` and `defaultLiteral` to be present or missing.
+
+Version 0.0.9 JSON Schemas are streamlined for Sinopia work.      
 
 Changes from version 0.0.2:
 
