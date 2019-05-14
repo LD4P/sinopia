@@ -126,12 +126,10 @@
             "type": "object",
             "title": "default Literal + URI",
             "description": "a default value is specified with a literal and a URI",
-            "required": ["defaultURI", "defaultLiteral"],
             "additionalProperties": false,
             "properties": {
               "defaultURI": {
                 "type": "string",
-                "format": "uri",
                 "title": "Default URI",
                 "description": "default value URI",
                 "examples": [
