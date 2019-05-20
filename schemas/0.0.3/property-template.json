@@ -1,0 +1,177 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ld4p.github.io/sinopia/schemas/0.0.2/property-template.json",
+  "title": "LC Property Template Schema (by Sinopia)",
+  "description": "Property template for property associated with the entity described by a resource template.",
+  "version": "0.0.3",
+  "type": "object",
+  "required": [
+    "propertyURI",
+    "propertyLabel",
+    "type"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "mandatory": {
+      "type": "string",
+      "title": "Mandatory",
+      "description": "Indication that the property is mandatory."
+    },
+    "propertyLabel": {
+      "type": "string",
+      "title": "Property Label",
+      "description": "Preferred, human readable label associated with the property.",
+      "example": [
+        "BIBFRAME 2.0 Admin Metadata"
+      ]
+    },
+    "propertyURI": {
+      "type": "string",
+      "format": "uri",
+      "title": "Property URI",
+      "description": "URI of the RDF property being described.",
+      "example": [
+        "http://id.loc.gov/ontologies/bibframe/AdminMetadata"
+      ]
+    },
+    "remark": {
+      "type": "string",
+      "title": "Remark",
+      "description": "Comment or guiding statement intended to be presented as supplementary information in user display."
+    },
+    "repeatable": {
+      "type": "string",
+      "title": "Repeatable",
+      "description": "Indication that the property is repeatable."
+    },
+    "resourceTemplates": {
+      "type": "array",
+      "title": "Always empty array of Resource Template References",
+      "description": "This is not currently used",
+      "maxItems": 0
+    },
+    "type": {
+      "type": "string",
+      "enum": ["literal", "lookup", "resource", "target"],
+      "title": "Type",
+      "description": "Type of value (literal / resource / lookup / target) that is allowed by this property."
+    },
+    "valueConstraint": {
+      "type": "object",
+      "title": "Value Constraint",
+      "description": "Constraint associated with the value.",
+      "additionalProperties": false,
+      "properties": {
+        "valueLanguage": {
+          "type": "string",
+          "title": "literal value language",
+          "description": "Language specified for a literal.  Never used/ignored?",
+          "maxLength": 0
+        },
+        "remark": {
+          "type": "string",
+          "title": "dataType remark",
+          "description": "Comment or guiding statement intended to be presented as supplementary information in user display.  Ignored."
+        },
+        "editable": {
+          "type": "string",
+          "title": "Editable",
+          "description": "Whether the value provided for the property is meant to be modified by a cataloger."
+        },
+        "repeatable": {
+          "type": "string",
+          "title": "Repeatable",
+          "description": "Indication whether the valueConstraint(?) is repeatable. (confusing)"
+        },
+        "validatePattern": {
+          "type": "string",
+          "title": "validation pattern",
+          "description": "Regular expression for input validation.  Never used/ignored.",
+          "maxLength": 0
+        },
+        "valueTemplateRefs": {
+          "type": "array",
+          "title": "Array of Resource Template References",
+          "description": "Array of identifiers (eventually URIs) for Resource Templates.",
+          "items": {
+            "type": "string"
+          },
+          "example": [
+            "['profile:bf2:Agent:Person', 'profile:bf2:Identifiers:Barcode', 'profile:bflc:Agents:PrimaryContribution']"
+          ]
+        },
+        "useValuesFrom": {
+          "type": "array",
+          "title": "Use Values From (these URIs)",
+          "description": "Array of Authority URIs or Vocabulary Lookup API identifiers to perform a lookup against.",
+          "items": {
+            "type": "string"
+          },
+          "example": [
+            "['http://id.loc.gov/authorities/names', 'http://mlvlp04.loc.gov:8230/resources/works', 'http://id.loc.gov/authorities/genreForms']"
+          ]
+        },
+        "valueDataType": {
+          "type": "object",
+          "title": "Value Data Types",
+          "description": "Data Type information - Type URI and comments primarily.",
+          "required": [],
+          "additionalProperties": false,
+          "properties": {
+            "dataTypeURI": {
+              "type": "string",
+              "format": "uri",
+              "title": "Data Type URI",
+              "description": "URI for the Data Type of the Lookup Value in this value template.",
+              "example": [
+                "http://id.loc.gov/ontologies/bibframe/Work",
+                "http://id.loc.gov/ontologies/bflc/PrimaryContribution",
+                "http://www.loc.gov/mads/rdf/v1#Affiliation"
+              ]
+            },
+            "dataTypeLabel": {
+              "type": "string",
+              "title": "dataType Label",
+              "description": "Preferred, human readable label associated with the DataType.  Ignored."
+            },
+            "dataTypeLabelHint": {
+              "type": "string",
+              "title": "dataType LabelHint",
+              "description": "Short, human readable label for display purposes.  Ignored."
+            },
+            "remark": {
+              "type": "string",
+              "title": "dataType remark",
+              "description": "Comment or guiding statement intended to be presented as supplementary information in user display.  Ignored."
+            }
+          }
+        },
+        "defaults": {
+          "type": "array",
+          "title": "array of default values",
+          "description": "array of default values each comprised of default literal and URI",
+          "items": {
+            "type": "object",
+            "title": "default Literal + URI",
+            "description": "a default value is specified with a literal and a URI",
+            "required": ["defaultURI", "defaultLiteral"],
+            "additionalProperties": false,
+            "properties": {
+              "defaultURI": {
+                "type": "string",
+                "format": "uri",
+                "title": "Default URI",
+                "description": "default value URI"
+              },
+              "defaultLiteral": {
+                "type": "string",
+                "title": "Default Literal",
+                "description": "default literal value"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

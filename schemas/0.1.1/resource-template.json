@@ -3,7 +3,7 @@
   "$id": "https://ld4p.github.io/sinopia/schemas/0.1.0/resource-template.json",
   "type": "object",
   "title": "Sinopia Resource Template Schema",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Resource Template construct (or hash) describes one of the various Sinopia entities (Works, Instances, Agent, etc.) associated with a given entity type and set of properties asserted against the entity.",
   "required": [
     "author",
@@ -52,6 +52,7 @@
       "title": "Resource Template Identifier",
       "description": "Identifier associated with a resource template. Eventually, a URI.",
       "minLength": 3,
+      "pattern": "^\\S+$",
       "example": [
         "profile:bf2:AdminMetadata",
         "http://sinopia.io/resources/common/AbstractResourceTemplate"

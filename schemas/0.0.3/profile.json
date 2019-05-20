@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ld4p.github.io/sinopia/schemas/0.0.2/profile.json",
+  "type": "object",
+  "title": "LC Profile Schema (by Sinopia)",
+  "description": "Profile, or array of Resource Templates with some top-level metadata.",
+  "version": "0.0.3",
+  "required": [ "Profile" ],
+  "additionalProperties": false,
+  "properties": {
+    "Profile": {
+      "type": "object",
+      "title": "Profile" ,
+      "description": "Profile key always at top level of a LC BFE / Sinopia BFF Profile.",
+      "required": [
+        "date",
+        "description",
+        "id",
+        "resourceTemplates",
+        "title"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "author": {
+          "type": "string",
+          "title": "Author",
+          "description": "Contact information associated with the profile.",
+          "example": [
+            "PCC",
+            "Michelle Futornick",
+            "Cornell University Cataloging Department"
+          ]
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "title": "Date",
+          "description": "Date associated with the profile",
+          "example": [
+            "2017-05-20"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "title": "Description",
+          "description": "Textual description associated with the profile.",
+          "example": [
+            "Metadata for BIBFRAME Resources"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "Unique identifier associated with the profile. Eventually, a Profile URI.",
+          "example": [
+            "profile:bf2:AdminMetadata",
+            "http://sinopia.io/resources/common/AdminMetadataProfile"
+          ]
+        },
+        "remark": {
+          "type": "string",
+          "title": "Remark",
+          "description": "Comment or guiding statement intended to be presented as supplementary information in user display."
+        },
+        "resourceTemplates": {
+          "$ref": "https://ld4p.github.io/sinopia/schemas/0.0.2/resource-templates-array.json"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title",
+          "description": "Textual title associated with the profile.",
+          "example": [
+            "BIBFRAME 2.0 Admin Metadata"
+          ]
+        }
+      }
+    }
+  }
+}
