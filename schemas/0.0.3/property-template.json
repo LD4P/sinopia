@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://ld4p.github.io/sinopia/schemas/0.0.2/property-template.json",
+  "$id": "https://ld4p.github.io/sinopia/schemas/0.0.3/property-template.json",
   "title": "LC Property Template Schema (by Sinopia)",
   "description": "Property template for property associated with the entity described by a resource template.",
   "version": "0.0.3",

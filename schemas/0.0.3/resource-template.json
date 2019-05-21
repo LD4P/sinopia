@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://ld4p.github.io/sinopia/schemas/0.0.2/resource-template.json",
+  "$id": "https://ld4p.github.io/sinopia/schemas/0.0.3/resource-template.json",
   "type": "object",
   "title": "LC Resource Template Schema (by Sinopia)",
   "version": "0.0.3",
@@ -34,7 +34,7 @@
       ]
     },
     "propertyTemplates": {
-      "$ref": "https://ld4p.github.io/sinopia/schemas/0.0.2/property-templates-array.json"
+      "$ref": "https://ld4p.github.io/sinopia/schemas/0.0.3/property-templates-array.json"
     },
     "remark": {
       "type": "string",
