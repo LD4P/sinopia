@@ -1,9 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://ld4p.github.io/sinopia/schemas/0.1.0/resource-template.json",
+  "$id": "https://ld4p.github.io/sinopia/schemas/0.2.0/resource-template.json",
   "type": "object",
   "title": "Sinopia Resource Template Schema",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A Resource Template construct (or hash) describes one of the various Sinopia entities (Works, Instances, Agent, etc.) associated with a given entity type and set of properties asserted against the entity.",
   "required": [
     "author",
@@ -52,13 +52,14 @@
       "title": "Resource Template Identifier",
       "description": "Identifier associated with a resource template. Eventually, a URI.",
       "minLength": 3,
+      "pattern": "^\\S+$",
       "example": [
         "profile:bf2:AdminMetadata",
         "http://sinopia.io/resources/common/AbstractResourceTemplate"
       ]
     },
     "propertyTemplates": {
-      "$ref": "https://ld4p.github.io/sinopia/schemas/0.1.0/property-templates-array.json"
+      "$ref": "https://ld4p.github.io/sinopia/schemas/0.2.0/property-templates-array.json"
     },
     "remark": {
       "type": "string",
@@ -95,12 +96,12 @@
       ]
     },
     "schema": {
-      "const": "https://ld4p.github.io/sinopia/schemas/0.1.0/resource-template.json",
+      "const": "https://ld4p.github.io/sinopia/schemas/0.2.0/resource-template.json",
       "title": "URL for Resource Template's JSON schema",
       "description": "The resource template adheres to the JSON schema at this URL",
       "minLength": 8,
       "example": [
-        "https://ld4p.github.io/sinopia/schemas/0.1.0/resource-template.json"
+        "https://ld4p.github.io/sinopia/schemas/0.2.0/resource-template.json"
       ]
     },
     "source": {
@@ -110,7 +111,7 @@
       "description": "URL or URI for the resource template in the owner's source repository or space.",
       "minLength": 5,
       "example": [
-        "https://raw.githubusercontent.com/LD4P/sinopia_sample_profiles/master/resourceTemplates/v0.1.0/monographInstance.json"
+        "https://raw.githubusercontent.com/LD4P/sinopia_sample_profiles/master/resourceTemplates/v0.2.0/monographInstance.json"
       ]
     }
   }

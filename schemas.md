@@ -22,6 +22,10 @@ Property Template:
 - move dataTypeURI out two levels, instead of valueConstraints.valueDataType.dataTypeURI or maybe include it within default, if it is only used for (type lookup with a ?) default.
 - only accept boolean (not string) for true/false.  (e.g. true not "true")
 
+## Version 0.2.0
+
+Version 0.2.0 is the same as version 0.1.0 in all respects except that it further requires that a resource template ID contain no spaces in the ID string. This is due to the fact that the resource template ID becomes the last path part of the sinopia server resource URI, and that URI cannot contain spaces in order to resolve correctly when fetching the resource.
+
 ## Version 0.1.0
 
 Version 0.1.0 has more stringent requirements than version 0.0.9, based on how the editor uses the templates.
@@ -125,6 +129,9 @@ The schemas are:
 special bonus schema
 - <https://ld4p.github.io/sinopia/schemas/0.0.9/profiles-array.json>
 
+## Version 0.0.3
+
+Version 0.0.3 is the same as version 0.0.2 in all respects except that it further requires that a resource template ID contain no spaces in the ID string. This is due to the fact that the resource template ID becomes the last path part of the sinopia server resource URI, and that URI cannot contain spaces in order to resolve correctly when fetching the resource.
 
 ## Version 0.0.2
 

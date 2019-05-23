@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://ld4p.github.io/sinopia/schemas/0.2.0/resource-templates-array.json",
+  "title": "Resource Template Array Schema (i.e. Multiple Resource Templates) (by Sinopia)",
+  "version": "0.2.0",
+  "type": "array",
+  "items": {
+    "$ref": "https://ld4p.github.io/sinopia/schemas/0.2.0/resource-template.json"
+  },
+  "minItems": 1
+}
