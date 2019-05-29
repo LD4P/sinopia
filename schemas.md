@@ -24,7 +24,19 @@ Property Template:
 
 ## Version 0.2.0
 
-Version 0.2.0 is the same as version 0.1.0 in all respects except that it further requires that a resource template ID contain no spaces in the ID string. This is due to the fact that the resource template ID becomes the last path part of the sinopia server resource URI, and that URI cannot contain spaces in order to resolve correctly when fetching the resource.
+Version 0.2.0 is the same as version 0.1.0 in all respects except that it further requires that a resource template ID contain no spaces in the ID string. This is due to the fact that the resource template ID becomes the last path part of the Sinopia server resource URI, and that URI cannot contain spaces in order to resolve correctly when fetching the resource.
+
+Note:  0.2.0 is not the same as 0.0.2
+
+### 0.2.0 schemas:
+
+- <https://ld4p.github.io/sinopia/schemas/0.2.0/profile.json>
+- <https://ld4p.github.io/sinopia/schemas/0.2.0/resource-templates-array.json>
+- <https://ld4p.github.io/sinopia/schemas/0.2.0/resource-template.json>
+- <https://ld4p.github.io/sinopia/schemas/0.2.0/property-templates-array.json>
+- <https://ld4p.github.io/sinopia/schemas/0.2.0/property-template.json>
+- <https://ld4p.github.io/sinopia/schemas/0.2.0/profiles-array.json>
+
 
 ## Version 0.1.0
 
@@ -62,15 +74,13 @@ Changes from version 0.0.9:
     - valueConstaint.valueTemplateRefs requires at least one entry (or it shouldn't be present)
     - valueConstraint.valueDataType requires dataTypeURI (or it shouldn't be present)
 
-The schemas are:
+### 0.1.0 schemas:
 
 - <https://ld4p.github.io/sinopia/schemas/0.1.0/profile.json>
 - <https://ld4p.github.io/sinopia/schemas/0.1.0/resource-templates-array.json>
 - <https://ld4p.github.io/sinopia/schemas/0.1.0/resource-template.json>
 - <https://ld4p.github.io/sinopia/schemas/0.1.0/property-templates-array.json>
 - <https://ld4p.github.io/sinopia/schemas/0.1.0/property-template.json>
-
-special bonus schema
 - <https://ld4p.github.io/sinopia/schemas/0.1.0/profiles-array.json>
 
 
@@ -118,20 +128,28 @@ Changes from version 0.0.2:
       - valueConstraint.valueDataType.dataTypeLabelHint
       - valueConstraint.valueDataType.remark
 
-The schemas are:
+### 0.0.9 schemas:
 
 - <https://ld4p.github.io/sinopia/schemas/0.0.9/profile.json>
 - <https://ld4p.github.io/sinopia/schemas/0.0.9/resource-templates-array.json>
 - <https://ld4p.github.io/sinopia/schemas/0.0.9/resource-template.json>
 - <https://ld4p.github.io/sinopia/schemas/0.0.9/property-templates-array.json>
 - <https://ld4p.github.io/sinopia/schemas/0.0.9/property-template.json>
-
-special bonus schema
 - <https://ld4p.github.io/sinopia/schemas/0.0.9/profiles-array.json>
+
 
 ## Version 0.0.3
 
-Version 0.0.3 is the same as version 0.0.2 in all respects except that it further requires that a resource template ID contain no spaces in the ID string. This is due to the fact that the resource template ID becomes the last path part of the sinopia server resource URI, and that URI cannot contain spaces in order to resolve correctly when fetching the resource.
+Version 0.0.3 is the same as version 0.0.2 in all respects except that it further requires that a resource template ID contain no spaces in the ID string. This is due to the fact that the resource template ID becomes the last path part of the Sinopia server resource URI, and that URI cannot contain spaces in order to resolve correctly when fetching the resource.
+
+### 0.0.3 schemas:
+
+- <https://ld4p.github.io/sinopia/schemas/0.0.3/profile.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.3/resource-templates-array.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.3/resource-template.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.3/property-templates-array.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.3/property-template.json>
+- <https://ld4p.github.io/sinopia/schemas/0.0.3/profiles-array.json>
 
 ## Version 0.0.2
 
@@ -141,13 +159,13 @@ It was an oversight that this wasn't included in Version 0.0.1 schemas.
 
 Also:  resourceTemplate can have author attribute.
 
+### 0.0.2 schemas:
+
 - <https://ld4p.github.io/sinopia/schemas/0.0.2/profile.json>
 - <https://ld4p.github.io/sinopia/schemas/0.0.2/resource-templates-array.json>
 - <https://ld4p.github.io/sinopia/schemas/0.0.2/resource-template.json>
 - <https://ld4p.github.io/sinopia/schemas/0.0.2/property-templates-array.json>
 - <https://ld4p.github.io/sinopia/schemas/0.0.2/property-template.json>
-
-special bonus schema
 - <https://ld4p.github.io/sinopia/schemas/0.0.2/profiles-array.json>
 
 
