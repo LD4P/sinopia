@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://ld4p.github.io/sinopia/schemas/0.2.0/resource-template.json",
+  "$id": "https://ld4p.github.io/sinopia/schemas/0.2.1/resource-template.json",
   "type": "object",
   "title": "Sinopia Resource Template Schema",
   "version": "0.2.1",
@@ -59,7 +59,7 @@
       ]
     },
     "propertyTemplates": {
-      "$ref": "https://ld4p.github.io/sinopia/schemas/0.2.0/property-templates-array.json"
+      "$ref": "https://ld4p.github.io/sinopia/schemas/0.2.1/property-templates-array.json"
     },
     "remark": {
       "type": "string",
@@ -96,12 +96,12 @@
       ]
     },
     "schema": {
-      "const": "https://ld4p.github.io/sinopia/schemas/0.2.0/resource-template.json",
+      "const": "https://ld4p.github.io/sinopia/schemas/0.2.1/resource-template.json",
       "title": "URL for Resource Template's JSON schema",
       "description": "The resource template adheres to the JSON schema at this URL",
       "minLength": 8,
       "example": [
-        "https://ld4p.github.io/sinopia/schemas/0.2.0/resource-template.json"
+        "https://ld4p.github.io/sinopia/schemas/0.2.1/resource-template.json"
       ]
     },
     "source": {

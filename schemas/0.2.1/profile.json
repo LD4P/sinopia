@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://ld4p.github.io/sinopia/schemas/0.2.0/profile.json",
+  "$id": "https://ld4p.github.io/sinopia/schemas/0.2.1/profile.json",
   "type": "object",
   "title": "Sinopia Profile Schema",
   "description": "Profile, or array of Resource Templates with some top-level metadata.",
@@ -83,15 +83,15 @@
           ]
         },
         "resourceTemplates": {
-          "$ref": "https://ld4p.github.io/sinopia/schemas/0.2.0/resource-templates-array.json"
+          "$ref": "https://ld4p.github.io/sinopia/schemas/0.2.1/resource-templates-array.json"
         },
         "schema": {
-          "const": "https://ld4p.github.io/sinopia/schemas/0.2.0/profile.json",
+          "const": "https://ld4p.github.io/sinopia/schemas/0.2.1/profile.json",
           "title": "URL for Profile's JSON schema",
           "description": "The profile adheres to the JSON schema at this URL",
           "minLength": 8,
           "example": [
-            "https://ld4p.github.io/sinopia/schemas/0.2.0/profile.json"
+            "https://ld4p.github.io/sinopia/schemas/0.2.1/profile.json"
           ]
         },
         "source": {
