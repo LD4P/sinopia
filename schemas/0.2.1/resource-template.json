@@ -1,0 +1,118 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ld4p.github.io/sinopia/schemas/0.2.0/resource-template.json",
+  "type": "object",
+  "title": "Sinopia Resource Template Schema",
+  "version": "0.2.1",
+  "description": "A Resource Template construct (or hash) describes one of the various Sinopia entities (Works, Instances, Agent, etc.) associated with a given entity type and set of properties asserted against the entity.",
+  "required": [
+    "author",
+    "date",
+    "id",
+    "propertyTemplates",
+    "resourceLabel",
+    "resourceURI",
+    "schema"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "adherence": {
+      "type": "string",
+      "title": "Adherence",
+      "description": "The standards or rules that this resource template adheres to.",
+      "minLength": 3,
+      "example": [
+        "PCC",
+        "PCC RDA Working Group"
+      ]
+    },
+    "author": {
+      "type": "string",
+      "title": "Author",
+      "description": "Contact information associated with the resource template.",
+      "minLength": 2,
+      "example": [
+        "PCC",
+        "Michelle Futornick",
+        "Cornell University Cataloging Department"
+      ]
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "title": "Date",
+      "description": "Date associated with the resource template.",
+      "minLength": 4,
+      "example": [
+        "2017-05-20"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "title": "Resource Template Identifier",
+      "description": "Identifier associated with a resource template. Eventually, a URI.",
+      "minLength": 3,
+      "pattern": "^\\S+$",
+      "example": [
+        "profile:bf2:AdminMetadata",
+        "http://sinopia.io/resources/common/AbstractResourceTemplate"
+      ]
+    },
+    "propertyTemplates": {
+      "$ref": "https://ld4p.github.io/sinopia/schemas/0.2.0/property-templates-array.json"
+    },
+    "remark": {
+      "type": "string",
+      "title": "Remark",
+      "description": "Comment or guiding statement intended to be presented as supplementary information in user display.",
+      "minLength": 3,
+      "example": [
+        "http://access.rdatoolkit.org/rdachp2_rda2-7632.html",
+        "used in rare materials profile",
+        "Title information relating to a resource: work title, preferred title, instance title, transcribed title, translated title, variant form of title, etc."
+      ]
+    },
+    "resourceLabel": {
+      "type": "string",
+      "title": "Resource Label",
+      "description": "Preferred, human readable label associated with the resource template.",
+      "minLength": 3,
+      "example": [
+        "BIBFRAME 2.0 Instance",
+        "Primary Contribution",
+        "Place Associated with a Work"
+      ]
+    },
+    "resourceURI": {
+      "type": "string",
+      "format": "uri",
+      "title": "Resource URI",
+      "description": "URI of the RDF resource type associated with the entity managed by this Resource Template.",
+      "minLength": 5,
+      "example": [
+        "http://id.loc.gov/ontologies/bibframe/Instance",
+        "http://id.loc.gov/ontologies/bflc/PrimaryContribution",
+        "http://id.loc.gov/ontologies/bibframe/Place"
+      ]
+    },
+    "schema": {
+      "const": "https://ld4p.github.io/sinopia/schemas/0.2.0/resource-template.json",
+      "title": "URL for Resource Template's JSON schema",
+      "description": "The resource template adheres to the JSON schema at this URL",
+      "minLength": 8,
+      "example": [
+        "https://ld4p.github.io/sinopia/schemas/0.2.0/resource-template.json"
+      ]
+    },
+    "source": {
+      "type": "string",
+      "format": "uri",
+      "title": "Source URI",
+      "description": "URL or URI for the resource template in the owner's source repository or space.",
+      "minLength": 5,
+      "example": [
+        "https://raw.githubusercontent.com/LD4P/sinopia_sample_profiles/master/resourceTemplates/v0.2.0/monographInstance.json"
+      ]
+    }
+  }
+}
