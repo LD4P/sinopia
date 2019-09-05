@@ -68,7 +68,7 @@
     },
     "type": {
       "type": "string",
-      "enum": ["literal", "lookup", "resource"],
+      "enum": ["literal", "literal-lang", "target", "list", "lookup", "resource"],
       "title": "Type",
       "description": "Type of value (literal / resource / lookup) that is allowed by this property."
     },
@@ -131,7 +131,10 @@
             "type": "object",
             "title": "default Literal + URI",
             "description": "a default value is specified with a literal and a URI",
-            "required": ["defaultURI", "defaultLiteral"],
+            "anyOf": [
+                { "required": ["defaultURI"] },
+                { "required": [ "defaultLiteral"] }
+            ],
             "additionalProperties": false,
             "properties": {
               "defaultURI": {
@@ -188,9 +191,9 @@
         }
       },
       "then": {
-        "$comment": "require valueConstraint.valueTemplateRefs and forbid defaults",
+        "$comment": "requires valueConstraint.valueTemplateRefs or useValuesFrom. Can include defaults.",
         "allOf": [
-          { "$ref": "#/definitions/requires-valueConstraint-valueTemplateRefs-forbids-defaults" }
+          { "$ref": "#/definitions/valueConstraint-requires-either-valueTemplateRefs-or-useValuesFrom" }
         ]
       }
     },
@@ -218,13 +221,13 @@
         }
       }
     },
-    "requires-valueConstraint-valueTemplateRefs-forbids-defaults": {
+    "valueConstraint-requires-either-valueTemplateRefs-or-useValuesFrom": {
       "required": ["valueConstraint"],
       "properties": {
         "valueConstraint" : {
-          "allOf": [
+          "anyOf": [
             { "required": ["valueTemplateRefs"] },
-            { "not": { "required": [ "defaults" ] } }
+            { "required": [ "useValuesFrom" ] }
           ]
         }
       }
