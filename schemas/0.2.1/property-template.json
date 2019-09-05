@@ -74,7 +74,7 @@
     },
     "type": {
       "type": "string",
-      "enum": ["literal", "lookup", "resource"],
+      "enum": ["literal", "literal-lang", "target", "list", "lookup", "resource"],
       "title": "Type",
       "description": "Type of value (literal / resource / lookup) that is allowed by this property."
     },
@@ -137,7 +137,10 @@
             "type": "object",
             "title": "default Literal + URI",
             "description": "a default value is specified with a literal and a URI",
-            "required": ["defaultURI", "defaultLiteral"],
+            "anyOf": [
+              { "required": ["defaultURI"] },
+              { "required": [ "defaultLiteral"] }
+            ],
             "additionalProperties": false,
             "properties": {
               "defaultURI": {
