@@ -34,7 +34,6 @@ logo: assets/img/logo.jpeg
 show_downloads: true
 show_dir_listing: true
 project_wiki: http://ld4p.org
-project_issues: https://waffle.io/LD4P/sinopia
 
 site:
   - github:
@@ -42,23 +41,5 @@ site:
     - owner_label: LD4P
 
 menu:
-  - menu-label: Requirements & Constraints
-    menu-url: /sinopia/requirements
-  - menu-label: Glossary
-    menu-url: /sinopia/glossary
-  - menu-label: Minimum Viable Product
-    menu-url: /sinopia/mvp
-  - menu-label: External Data Interactions
-    menu-url: /sinopia/external-data
-  - menu-label: Acceptance Tests
-    menu-url: /sinopia/acceptance-tests
-  - menu-label: Architecture
-    menu-url: /sinopia/architecture
-  - menu-label: Implementation
-    menu-url: /sinopia/implementation
-  - menu-label: Data & Interaction Models
-    menu-url: /sinopia/models
-  - menu-label: JSON schemas for Profiles and ResourceTemplates
-    menu-url: /sinopia/schemas
   - menu-label: Sinopia Help and Resources
     menu-url: /sinopia/help_and_resources/menu.html
